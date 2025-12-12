@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="#" onclick="logout()" style="float:right;">Logout</a>
+</nav>
+
+<script>
+if (sessionStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+function logout(){
+    sessionStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+
+<div class="hero">
+    Your Dream Wedding, Perfectly Planned
+</div>
+
+<!-- Portfolio -->
+<div class="section" id="portfolio">
+    <h2>Our Portfolio</h2>
+
+    <div class="portfolio-grid">
+    <img src="https://media.istockphoto.com/id/157508618/photo/wedding-ring.jpg?s=612x612&w=0&k=20&c=Q9aKVFldln6kZ_px_rF53ZtV5NEK2cAOsmwZ6NviKXw=">
+    <img src="https://media.istockphoto.com/id/1190491647/photo/outdoor-wedding-reception-table-with-chairs.jpg?s=612x612&w=0&k=20&c=qpzzH8Ls_kxtb-w7aYLtpXpdIX5qcRX3fDlpYTUR2LY=">
+    <img src="https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D">
+    <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D">
+    <img src="https://static.vecteezy.com/system/resources/previews/038/464/516/large_2x/ai-generated-romantic-wedding-venue-with-floral-arches-and-fairy-lights-free-photo.jpeg">
+    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=60">
+</div>
+
+</div>
+
+<!-- Services Section -->
+<div class="section" id="services">
+    <h2>Our Services</h2>
+
+    <div class="services-grid">
+        <div class="service-box">Venue Decoration</div>
+        <div class="service-box">Wedding Photography</div>
+        <div class="service-box">Catering & Food</div>
+        <div class="service-box">Theme Planning</div>
+        <div class="service-box">Makeup & Styling</div>
+        <div class="service-box">Guest Management</div>
+    </div>
+</div>
+
+<div class="section" id="pricing">
+<h2>Pricing Plans</h2>
+
+<div class="pricing-box">Basic Package – ₹50,000</div>
+<div class="pricing-box">Premium Package – ₹1,00,000</div>
+<div class="pricing-box">Luxury Package – ₹2,50,000</div>
+</div>
+
+
+<!-- Testimonials -->
+<div class="section" id="testimonials">
+    <h2>Testimonials</h2>
+
+    <div class="testimonial-box">“We couldn't believe how beautiful everything was! Perfect decor.” – Riya & Arjun</div>
+    <div class="testimonial-box">“The team planned everything on time. Highly recommended!” – Meera & Sushant</div>
+    <div class="testimonial-box">“Our guests loved the theme and arrangements.” – Khushi & Raj</div>
+</div>
+
+<!-- Inquiry Form -->
+<div class="section" id="inquiry">
+    <h2>Send Inquiry</h2>
+
+    <input type="text" id="name" placeholder="Your Name"><br>
+    <input type="email" id="email" placeholder="Your Email"><br>
+    <textarea id="message" placeholder="Your Message"></textarea><br>
+
+    <button onclick="sendInquiry()">Submit</button>
+    <p id="status" style="color:green;"></p>
+</div>
+
+<script>
+function sendInquiry() {
+    document.getElementById("status").innerHTML =
+        "Thank you! We will contact you shortly.";
+}
+</script>
+
+<footer>
+    © 2025 Wedding Planner | Making Your Day Magical ✨
+</footer>
+
+</body>
+</html>

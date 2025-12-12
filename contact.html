@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact - Wedding Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="#" onclick="logout()" style="float:right;">Logout</a>
+</nav>
+
+<div class="section">
+    <h2>Contact Us</h2>
+
+    <p>Email: weddingplanner@gmail.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: Delhi, India</p>
+
+    <h3>Send Message</h3>
+    <input type="text" id="cname" placeholder="Your Name">
+    <input type="email" id="cemail" placeholder="Your Email">
+    <textarea id="cmsg" placeholder="Your Message"></textarea>
+    <button onclick="contactSubmit()">Send</button>
+    <p id="status" style="color:green;"></p>
+</div>
+
+<script>
+if(sessionStorage.getItem("loggedIn") !== "true"){ 
+    window.location.href="login.html"; 
+}
+
+function contactSubmit(){
+    document.getElementById("status").innerText = 
+    "Message sent successfully!";
+}
+
+function logout(){ sessionStorage.removeItem("loggedIn"); window.location.href="login.html"; }
+</script>
+
+</body>
+</html>

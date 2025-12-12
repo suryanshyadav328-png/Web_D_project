@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback - Wedding Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="#" onclick="logout()" style="float:right;">Logout</a>
+</nav>
+
+<div class="section">
+    <h2>Feedback Form</h2>
+
+    <input type="text" id="fname" placeholder="Your Name">
+    <textarea id="fmsg" placeholder="Your Feedback"></textarea>
+    <button onclick="submitFeedback()">Submit</button>
+    <p id="thanks" style="color:green;"></p>
+</div>
+
+<script>
+if(sessionStorage.getItem("loggedIn") !== "true"){ 
+    window.location.href="login.html"; 
+}
+
+function submitFeedback(){
+    document.getElementById("thanks").innerText = "Thank you for your feedback!";
+}
+
+function logout(){ sessionStorage.removeItem("loggedIn"); window.location.href="login.html"; }
+</script>
+
+</body>
+</html>
